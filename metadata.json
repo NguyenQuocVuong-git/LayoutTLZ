@@ -1,0 +1,6 @@
+{
+  "name": "LastZ Bot Control Center",
+  "description": "Advanced automated control panel for LastZ game automation with real-time logging and Telegram integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

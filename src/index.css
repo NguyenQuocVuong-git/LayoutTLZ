@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-darker: #010409;
+  --color-bg-main: #0d1117;
+  --color-bg-sidebar: #161b22;
+  --color-bg-panel: #161b22;
+  --color-bg-panel-header: #21262d;
+  --color-border-github: #30363d;
+  
+  --color-github-blue: #58a6ff;
+  --color-github-blue-mure: #1f6feb;
+  --color-github-green: #3fb950;
+  --color-github-red: #f85149;
+  --color-github-orange: #d29922;
+  --color-github-text-main: #c9d1d9;
+  --color-github-text-bright: #f0f6fc;
+  --color-github-text-muted: #8b949e;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-github-text-main font-sans;
+  }
+}
+
+.gh-card {
+  @apply bg-bg-panel border border-border-github rounded-xl overflow-hidden shadow-xl;
+}
+
+.gh-panel-header {
+  @apply bg-bg-panel-header px-4 py-2 border-b border-border-github flex items-center justify-between;
+}
+
+.gh-terminal {
+  @apply bg-black border border-border-github rounded-lg flex flex-col shadow-inner;
+}
+
+.nav-link {
+  @apply flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 text-github-text-muted hover:text-github-text-bright hover:bg-bg-panel-header cursor-pointer;
+}
+
+.nav-link.active {
+  @apply text-white bg-github-blue-mure;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.4));
+}
+
+.logo-animation:hover .logo-path {
+  stroke-dashoffset: 0;
+  transition: all 0.6s ease;
+}
+
+input, select {
+  @apply bg-bg-main border border-border-github rounded px-3 py-1.5 text-sm text-github-text-main outline-none focus:border-github-blue-mure transition-colors;
+}
+
+label {
+  @apply text-[10px] uppercase font-bold text-github-text-muted tracking-wider mb-1 block;
+}
